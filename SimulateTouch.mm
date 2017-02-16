@@ -266,6 +266,7 @@ static void SendTouchesEvent(mach_port_t port) {
                                                                       kHIDPage_Consumer,
                                                                       hidButton, state, 0);
             SendHIDEvent(buttonEvent);
+            // 解决模拟按键操作时队列始终无法清除的问题
             [STTouches removeObjectForKey:pIndex];
 
         }
